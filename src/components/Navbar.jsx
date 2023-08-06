@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(true);
@@ -10,24 +11,23 @@ const Navbar = () => {
   };
 
   return (
-    <div className="text-white bg-[#130749]  flex justify-around items-center h-24 px-4  mx-auto md:px-16">
-      <h1 className="w-full text-3xl font-bold">
-        COINPULSE
-      </h1>
+    <div className="text-white bg-[#0f051d] mb-7 shadow-slate-400 shadow-sm  flex justify-around items-center h-24 px-4  mx-auto md:px-16">
+      <h1 className="w-full text-3xl font-bold">COINPULSE</h1>
       <ul className=" hidden md:flex gap-12 items-center cursor-pointer">
         <li className=" font-bold text-lg">
-          <a href="#home">Home</a>
+          <Link to={"/"}>Home</Link>
         </li>
         <li className="font-bold text-lg">
-          <a href="#home">Market</a>
+          <Link to={"/coin"}>Coin</Link>
+        </li>
+        <li className="font-bold text-lg">
+          <Link to={"/exchange"}>Exchange</Link>
         </li>
         <li className=" w-24 font-bold text-lg">
-          <a className="" href="#home">
-            Choose Us
-          </a>
+          <Link to={"/"}>Choose Us</Link>
         </li>
         <li className=" font-bold text-lg">
-          <a href="#home">Join</a>
+          <Link to={"/"}>Join</Link>
         </li>
       </ul>
       <div className="cursor-pointer block md:hidden" onClick={handleNav}>
@@ -36,23 +36,26 @@ const Navbar = () => {
       <div
         className={
           !nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#130749] ease-in-out duration-800"
+            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#0f051d] ease-in-out duration-800"
             : "hidden"
         }
       >
         <h1 className="w-full text-3xl font-bold text-white m-4">COINPULSE</h1>
         <ul className="p-4 uppercase font-semibold cursor-pointer">
           <li className="p-4 border-b border-slate-300">
-            <a href="#home">Home</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="p-4 border-b border-slate-300">
-            <a href="#home">Market</a>
+            <Link to={"/coin"}>Coin</Link>
           </li>
           <li className="p-4 border-b border-slate-300">
-            <a href="#home">Choose Us</a>
+            <Link to={"/exchange"}>Exchange</Link>
           </li>
           <li className="p-4 border-b border-slate-300">
-            <a href="#home">Join</a>
+            <Link to={"/"}>Choose Us</Link>
+          </li>
+          <li className="p-4 border-b border-slate-300">
+            <Link to={"/"}>Join</Link>
           </li>
         </ul>
       </div>
