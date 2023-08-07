@@ -23,12 +23,6 @@ const Navbar = () => {
         <li className="font-bold text-lg">
           <Link to={"/exchange"}>Exchange</Link>
         </li>
-        <li className=" w-24 font-bold text-lg">
-          <Link to={"/"}>Choose Us</Link>
-        </li>
-        <li className=" font-bold text-lg">
-          <Link to={"/"}>Join</Link>
-        </li>
       </ul>
       <div className="cursor-pointer block md:hidden" onClick={handleNav}>
         {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -36,7 +30,7 @@ const Navbar = () => {
       <div
         className={
           !nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#0f051d] ease-in-out duration-800"
+            ? "fixed z-10 left-0 top-0 w-[70%] h-full border-r border-r-gray-900 bg-[#0f051d] ease-in-out duration-800"
             : "hidden"
         }
       >
@@ -50,12 +44,6 @@ const Navbar = () => {
           </li>
           <li className="p-4 border-b border-slate-300">
             <Link to={"/exchange"}>Exchange</Link>
-          </li>
-          <li className="p-4 border-b border-slate-300">
-            <Link to={"/"}>Choose Us</Link>
-          </li>
-          <li className="p-4 border-b border-slate-300">
-            <Link to={"/"}>Join</Link>
           </li>
         </ul>
       </div>
