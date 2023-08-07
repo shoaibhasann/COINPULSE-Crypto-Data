@@ -1,0 +1,14 @@
+/* For Webkit browsers (Chrome, Safari) */
+/* You can customize the colors and properties below */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cf00ee; /* Customize this color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0f051d; /* Customize this color */
+}
