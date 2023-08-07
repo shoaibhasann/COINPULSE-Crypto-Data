@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 
 function Exchangecard({ name, url, price, market, image, change }) {
   const changeClass =
-    parseFloat(change) > 0 ? "text-green-500" : "text-red-500";
+    parseFloat(change) > 0 ? "text-green-600" : "text-red-600";
   const formattedChange = parseFloat(change).toFixed(2);
-  // Remove negative sign for positive changes
-  const changeDisplay =
-    parseFloat(change) > 0 ? formattedChange : formattedChange.slice(1);
+
   return (
     <Link
       to={url}
@@ -17,11 +15,11 @@ function Exchangecard({ name, url, price, market, image, change }) {
         <img className="w-10 h-10" src={image} alt="logo" />
         <div className="title text-white font-medium text-xl">{name}</div>
       </div>
-      <div className="text-white font-medium text-xl">{"$ " + price}</div>
-      <div className={`text-white font-medium text-xl ${changeClass}`}>
-        {changeDisplay + " %"}
+      <div className="text-white font-medium text-xl">{"₹ " + price}</div>
+      <div className={` font-medium text-xl ${changeClass}`}>
+        {formattedChange + " %"}
       </div>
-      <div className="text-white font-medium text-xl">{"$ " + market}</div>
+      <div className="text-white font-medium text-xl">{"₹ " + market}</div>
     </Link>
   );
 }
