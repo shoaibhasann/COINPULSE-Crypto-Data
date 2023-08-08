@@ -12,7 +12,7 @@ function Footer() {
         alt="Bitcoin-Safe"
       />
       <div className="flex flex-col gap-3 md:gap-6">
-        <div className="flex gap-8 items-center justify-center text-white text-2xl md:text-4xl">
+        <div className="flex gap-5 md:gap-8 items-center justify-center text-white text-2xl md:text-4xl">
           <FaTwitter />
           <FaFacebook />
           <FaYoutube />
