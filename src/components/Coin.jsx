@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
-import Coincard from "./Coincard";
+import CoinCard from "./CoinCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 export function numberWithCommas(x) {
@@ -16,7 +16,7 @@ function Coin() {
   const coinApi = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&sparkline=false`;
 
   useEffect(() => {
-    const fetchCoinData = async () => {
+    const fetchCoinsData = async () => {
       try {
         const { data } = await axios.get(coinApi);
         setCoins(data);
@@ -25,7 +25,7 @@ function Coin() {
         setLoading(true);
       }
     };
-    fetchCoinData();
+    fetchCoinsData();
   }, [currentPage]);
 
   const previousPage = currentPage === 1 ? "hidden" : "";
@@ -44,23 +44,23 @@ function Coin() {
           <h1 className="text-white font-medium text-3xl mt-16 mb-10">
             Coin Updates
           </h1>
-          <div className="grid grid-cols-[16fr_25fr_25fr_25fr] font-medium rounded-t-lg text-2xl text-white p-4 place-items-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
+          <div className="grid grid-cols-3 md:grid-cols-[16fr_25fr_25fr_25fr] font-medium rounded-t-lg text-base md:text-2xl text-white p-4 place-items-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
             <h3>Coin</h3>
             <h3>Price</h3>
             <h3>24h Change</h3>
-            <h3>Market Cap</h3>
+            <h3 className="hidden md:block">Market Cap</h3>
           </div>
           {coins
             .slice(currentPage * 10 - 10, currentPage * 10)
             .map((element) => (
-              <Coincard
+              <CoinCard
                 key={element.id}
                 name={element.name}
                 image={element.image}
                 price={numberWithCommas(element.current_price)}
-                url={element.url}
                 change={element.price_change_percentage_24h}
                 market={numberWithCommas(element.market_cap)}
+                id={element.id}
               />
             ))}
 
@@ -68,13 +68,13 @@ function Coin() {
             <div onClick={scrollTop} className="flex gap-2 items-center my-7 w-full justify-center">
               <AiOutlineArrowLeft
                 onClick={() => setCurrentPage(currentPage - 1)}
-                className={`bg-white w-12 h-12 p-2 rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${previousPage}`}
+                className={`bg-white w-10 h-10 md:w-12 md:h-12 md:p-2 rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${previousPage}`}
               />
               {[...Array(Math.ceil(coins.length / 10))].map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentPage(index + 1)}
-                  className={`bg-white text-base w-12 h-12 text-black font-bold rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${
+                  className={`bg-white hidden md:block text-sm md:text-base md:w-12 md:h-12 text-black font-bold rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${
                     index + 1 === currentPage
                       ? "text-slate-50 bg-gradient-to-r from-[#3e00fa] to-[#d900ed]"
                       : ""
@@ -85,7 +85,7 @@ function Coin() {
               ))}
               <AiOutlineArrowRight
                 onClick={() => setCurrentPage(currentPage + 1)}
-                className={`bg-white w-12 h-12 p-2 rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${lastPage}`}
+                className={`bg-white h-10 w-10 md:w-12 md:h-12 md:p-2 rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${lastPage}`}
               />
             </div>
           )}
