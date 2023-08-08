@@ -25,8 +25,8 @@ function Hero() {
     parseFloat(priceChange) > 0 ? "text-green-600" : "text-red-600";
 
   return (
-    <div className="bg-gradient-to-b from-[#0f051d] to-[#130749] mt-24">
-      <div className="flex justify-center items-center gap-12">
+    <div className=" flex flex-col md:gap-10 bg-gradient-to-b from-[#0f051d] to-[#130749] mt-24">
+      <div className="flex justify-center items-center gap-6 md:gap-12">
         <img
           className=" w-10 h-10 lg:w-20 lg:h-20 animate-bounce"
           src={Bit}
@@ -41,10 +41,10 @@ function Hero() {
           alt="Ethereum"
         />
       </div>
-      <div className=" text-xl lg:text-8xl font-bold tracking-wider mb-11 text-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
+      <div className=" text-xl lg:text-8xl font-bold tracking-wider  text-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
         CRYPTO CURRENCIES
       </div>
-      <div className="hidden md:flex items-center justify-evenly">
+      <div className="flex flex-col md:flex-row items-center justify-evenly gap-6 py-16 md:py-0">
         {coins.map((item, index) => (
           <div key={index} className="flex flex-col items-center gap-2">
             <img
