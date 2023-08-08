@@ -3,12 +3,14 @@ import Loader from './Loader';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Chart from './Chart';
+import ErrorCard from './ErrorCard';
 
 function CoinDetail() {
       const [coin, setCoin] = useState([]);
       const [loading, setLoading] = useState(true);
       const [days, setDays] = useState('100d');
       const [chartArray , setChartArray] = useState([]);
+      const [showError, setError] = useState(false);
       const {id} = useParams();
 
         useEffect(() => {
@@ -20,7 +22,7 @@ function CoinDetail() {
               setChartArray(chartData.prices);
               setLoading(false);
             } catch (error) {
-              setLoading(true);
+              setError(true);
             }
           };
           fetchCoin();
@@ -28,6 +30,10 @@ function CoinDetail() {
 
           const getChangeClass = (priceChange) =>
             parseFloat(priceChange) > 0 ? "text-green-600" : "text-red-600";
+
+            if(showError){
+                return <ErrorCard/>
+            }
 
   return (
     <div className="bg-gradient-to-b from-[#0f051d] t-[#130749] h-full">

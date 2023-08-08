@@ -3,12 +3,14 @@ import React, { useEffect, useState } from 'react'
 import Loader from './Loader';
 import Exchangecard from './ExchangeCard';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import ErrorCard from './ErrorCard';
 
 function Exchange() {
 
     const [ exchanges, setExchanges ] = useState([]);
     const [ loading , setLoading ] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
+    const [showError, setError] = useState(false);
 
     const exchangeApi = "https://api.coingecko.com/api/v3/exchanges?vs_currency=inr";
 
@@ -25,7 +27,7 @@ function Exchange() {
             setExchanges(data);
             setLoading(false);
         } catch (error) {
-            setLoading(true);
+            setError(true);
         }
    }
    fetchExchangeData();
@@ -37,6 +39,10 @@ function Exchange() {
         const scrollTop = () => {
           window.scrollTo({ top: (0, 0), behavior: "smooth" });
         };
+
+        if(showError){
+          return <ErrorCard/>
+        }
 
   return (
     <div className="bg-[#0f051d]">

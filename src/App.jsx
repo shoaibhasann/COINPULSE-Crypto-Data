@@ -4,8 +4,6 @@ import Coin from './components/Coin';
 import Navbar from './components/Navbar';
 import Exchange from './components/Exchange';
 import CoinDetail from './components/Coindetail';
-import Loader from './components/Loader';
-
 
 function App() {
 
