@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Chart from './Chart';
 
-function Coindetail() {
+function CoinDetail() {
       const [coin, setCoin] = useState([]);
       const [loading, setLoading] = useState(true);
       const [days, setDays] = useState('100d');
@@ -91,4 +91,4 @@ function Coindetail() {
   );
 }
 
-export default Coindetail
+export default CoinDetail

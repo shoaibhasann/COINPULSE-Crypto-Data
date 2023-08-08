@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Coin from './components/Coin';
 import Navbar from './components/Navbar';
 import Exchange from './components/Exchange';
-import Coindetail from './components/Coindetail';
+import CoinDetail from './components/Coindetail';
 import Loader from './components/Loader';
 
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/coin" element={<Coin />} />
         <Route path="/exchange" element={<Exchange />} />
-        <Route path="/coin/:id" element={<Coindetail />} />
+        <Route path="/coin/:id" element={<CoinDetail />} />
       </Routes>
     </Router>
   )
