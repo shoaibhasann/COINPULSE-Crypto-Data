@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
-import CoinCard from "./CoinCard";
+import CoinCard from "./CoinCard.jsx";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 export function numberWithCommas(x) {
