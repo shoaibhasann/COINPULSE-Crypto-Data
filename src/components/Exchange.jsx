@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Loader from './Loader';
-import Exchangecard from './Exchangecard';
+import Exchangecard from './ExchangeCard';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 function Exchange() {
@@ -47,9 +47,9 @@ function Exchange() {
           <h1 className="text-white font-medium text-3xl mt-16 mb-10 ">
             Exchange Updates
           </h1>
-          <div className=" grid grid-cols-3 font-medium rounded-t-lg text-2xl text-white p-4 place-items-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
+          <div className=" grid grid-cols-2 md:grid-cols-3 font-medium rounded-t-lg md:text-2xl text-white p-4 place-items-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
             <h3>Exchange</h3>
-            <h3>Rank</h3>
+            <h3 className='hidden md:block'>Rank</h3>
             <h3>Bitcoin Trade Amount</h3>
           </div>
           {exchanges.slice(currentPage * 10 - 10, currentPage * 10).map((element) => (
@@ -72,7 +72,7 @@ function Exchange() {
                 <button
                   key={index}
                   onClick={() => setCurrentPage(index + 1)}
-                  className={`bg-white text-base w-12 h-12 text-black font-bold rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${
+                  className={`bg-white hidden md:block text-base w-12 h-12 text-black font-bold rounded-full focus:bg-gradient-to-r from-[#3e00fa] to-[#d900ed] focus:text-white ${
                     index + 1 === currentPage
                       ? "text-slate-50 bg-gradient-to-r from-[#3e00fa] to-[#d900ed]"
                       : ""

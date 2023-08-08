@@ -4,8 +4,8 @@ import Eth from "../assets/ethereum.png";
 
 function Join() {
   return (
-    <div className="flex flex-col  items-center bg-gradient-to-b from-[#130749] to-[#0f051d] pt-28 mb-28">
-      <div className="flex justify-center items-center gap-12">
+    <div className="flex flex-col  items-center bg-gradient-to-b from-[#130749] to-[#0f051d] pt:24 md:pt-28 px-6 md:px-0 mb-28">
+      <div className="flex justify-center items-center gap-8 md:gap-12">
         <img
           className=" w-10 h-10 lg:w-20 lg:h-20 animate-bounce"
           src={Bit}
@@ -23,10 +23,10 @@ function Join() {
       <div className=" text-xl lg:text-8xl font-bold tracking-wider mb-11  bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
         DISCORD
       </div>
-      <h3 className="text-white  text-2xl">
+      <h3 className="text-white text-lg  md:text-2xl">
         Invest and manage all your crypto at one place.
       </h3>
-      <a href='https://discord.com' target='_blank' className="text-white font-bold rounded-3xl text-2xl px-8 py-2 mt-10 bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
+      <a href='https://discord.com' target='_blank' className="text-white font-bold rounded-3xl text-xl md:text-2xl px-8 py-2 mt-10 bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">
         Join via Discord
       </a>
     </div>
