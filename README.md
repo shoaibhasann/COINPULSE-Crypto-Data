@@ -1,6 +1,6 @@
-# CoinPulse
+# COINPULSE
 
-CoinPulse is a React application that utilizes the CoinGecko API to fetch cryptocurrency and exchange data. Users can explore various information about coins and exchanges, such as prices, 24-hour changes, market caps, and more. The application is designed with the use of Tailwind CSS for responsive and stylish user interfaces.
+COINPULSE is a React application that utilizes the CoinGecko API to fetch cryptocurrency and exchange data. Users can explore various information about coins and exchanges, such as prices, 24-hour changes, market caps, and more. The application is designed with the use of Tailwind CSS for responsive and stylish user interfaces.
 
 ## Features
 
