@@ -41,7 +41,7 @@ function Hero() {
           alt="Ethereum"
         />
       </div>
-      <div className=" text-xl lg:text-8xl font-bold tracking-wider  text-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
+      <div className=" text-3xl lg:text-8xl font-bold tracking-wider  text-center bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
         CRYPTO CURRENCIES
       </div>
       <div className="flex flex-col md:flex-row items-center justify-evenly gap-6 py-16 md:py-0">

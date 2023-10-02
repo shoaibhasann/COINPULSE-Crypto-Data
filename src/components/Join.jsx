@@ -20,10 +20,10 @@ function Join() {
           alt="Ethereum"
         />
       </div>
-      <div className=" text-xl lg:text-8xl font-bold tracking-wider mb-11  bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
+      <div className=" text-3xl lg:text-8xl font-bold tracking-wider mb-11  bg-gradient-to-r from-[#3e00fa] to-[#d900ed] text-transparent bg-clip-text">
         DISCORD
       </div>
-      <h3 className="text-white text-lg  md:text-2xl">
+      <h3 className="text-white text-lg text-center md:text-2xl">
         Invest and manage all your crypto at one place.
       </h3>
       <a href='https://discord.com' target='_blank' className="text-white font-bold rounded-3xl text-xl md:text-2xl px-8 py-2 mt-10 bg-gradient-to-r from-[#3e00fa] to-[#d900ed]">

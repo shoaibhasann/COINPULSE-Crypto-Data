@@ -36,7 +36,7 @@ function CoinDetail() {
             }
 
   return (
-    <div className="bg-gradient-to-b from-[#0f051d] t-[#130749] h-full">
+    <div className="bg-gradient-to-b from-[#0f051d] t-[#130749] h-full my-7">
       {loading ? (
         <Loader />
       ) : (
