@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Exchangecard({name, url, price, rank, image, percent}) {
+function ExchangeCard({name, url, price, rank, image, percent}) {
   return (
     <Link
       to={url}
@@ -21,4 +21,4 @@ function Exchangecard({name, url, price, rank, image, percent}) {
   );
 }
 
-export default Exchangecard;
+export default ExchangeCard;
